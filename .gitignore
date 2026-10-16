@@ -1,0 +1,11 @@
+data/raw/*
+!data/raw/.gitkeep
+**/.pbi/
+**/.platform
+__pycache__/
+*.pyc
+*.pending.json
+*.download
+*.zip
+!sample-data.zip
+data/processed/*

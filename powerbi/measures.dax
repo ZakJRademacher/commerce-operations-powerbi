@@ -1,0 +1,87 @@
+// One row per source order; all statuses retained.
+Orders =
+COUNTROWS(Orders)
+
+// Source status Delivered, including those missing timing.
+Delivered Orders =
+CALCULATE([Orders], Orders[Status] = "Delivered")
+
+// Delivered order item prices, excludes freight. Not profit or recognized revenue.
+Delivered Merchandise BRL =
+DIVIDE(CALCULATE(SUM(Orders[Merchandise Cents]), Orders[Status] = "Delivered"), 100)
+
+// Delivered status and valid actual/estimated timing; delivery not before purchase.
+Eligible Deliveries =
+SUM(Orders[Delivery Eligible])
+
+// Eligible deliveries whose actual calendar date exceeds estimated calendar date.
+Late Deliveries =
+SUM(Orders[Late])
+
+// Eligible denominator; blank where none are eligible.
+On Time Rate =
+DIVIDE([Eligible Deliveries] - [Late Deliveries], [Eligible Deliveries])
+
+// Monthly trend suppressed where fewer than 100 eligible deliveries; totals elsewhere remain unchanged.
+Late Rate Trend =
+IF([Eligible Deliveries] >= 100, [Late Rate])
+
+// Late eligible deliveries divided by eligible deliveries.
+Late Rate =
+DIVIDE([Late Deliveries], [Eligible Deliveries])
+
+// Median calendar days purchase to delivery for eligible orders.
+Median Delivery Days =
+CALCULATE(MEDIAN(Orders[Delivery Days]), Orders[Delivery Eligible] = 1)
+
+// Mean lateness among late orders only.
+Average Late Days =
+CALCULATE(AVERAGE(Orders[Late Days]), Orders[Late] = 1)
+
+// Delivered orders excluded from timing calculations.
+Timing Exclusions =
+[Delivered Orders] - [Eligible Deliveries]
+
+// One row per source item; each row represents one ordered unit.
+Item Lines =
+COUNTROWS(Items)
+
+// Source item rows whose order status is delivered.
+Delivered Item Lines =
+CALCULATE([Item Lines], Items[Status] = "Delivered")
+
+// Delivered item prices; responds to category filters.
+Category Merchandise BRL =
+DIVIDE(CALCULATE(SUM(Items[Price Cents]), Items[Status] = "Delivered"), 100)
+
+// Source item-level freight charges for delivered orders.
+Delivered Freight BRL =
+DIVIDE(CALCULATE(SUM(Items[Freight Cents]), Items[Status] = "Delivered"), 100)
+
+// Freight divided by merchandise; not margin and not share of gross checkout.
+Freight to Merchandise =
+DIVIDE([Delivered Freight BRL], [Category Merchandise BRL])
+
+// Item rows with missing source product category.
+Uncategorized Lines =
+CALCULATE([Item Lines], Items[Category Mapping] = "Missing source category")
+
+// Full unfiltered snapshot order count.
+Snapshot Orders =
+SUM('Refresh'[Source Orders])
+
+// Full unfiltered snapshot item count.
+Snapshot Items =
+SUM('Refresh'[Source Items])
+
+// Distinct orders with one or more exception events.
+Orders With Exceptions =
+SUM('Refresh'[Source Orders With Exceptions])
+
+// Events can overlap; do not add them as distinct affected orders.
+Exception Events =
+SUM('Refresh'[Source Exception Events])
+
+// Row count for the selected quality check; grains can differ and overlap.
+Flagged Rows =
+IF(ISINSCOPE(Quality[Check]), SUM(Quality[Rows]))
