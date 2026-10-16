@@ -24,6 +24,11 @@ selected mark again or blank canvas to clear. Hover for exact values. Tables can
 be sorted by their column headings and scrolled. Clear selections before sharing
 an all-data screenshot. A blank rate means no eligible observations, not 0%.
 
+The Order status chart is a snapshot: an order recorded as Delivered contributes
+only to Delivered. Shipped contains orders still recorded in that state. The
+source does not provide a complete history of status transitions, so this chart
+does not count all orders that were ever shipped.
+
 ## Refresh on this computer
 
 The automated part is the validation, cleaning, joins, metrics and report
@@ -46,6 +51,12 @@ newly downloaded Kaggle version, download it separately and provide its six
 required CSVs in a new raw folder. Run `python src/pipeline.py --raw <folder>`.
 Supply complete snapshots with the same source schema and meaning. Arbitrary
 client CSVs with similar headers require a new mapping and validation contract.
+
+For a recurring business export, agree on a full-snapshot or incremental delivery
+contract first. This implementation rebuilds from a complete snapshot; it does
+not merge a weekly delta into earlier orders. A weekly-only file could remove
+older history from the dashboard. Incremental updates require a separate merge
+step with stable keys and explicit rules for changed orders and removals.
 
 ## Move to another computer
 

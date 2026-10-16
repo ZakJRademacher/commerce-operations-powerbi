@@ -51,9 +51,16 @@ Power BI visuals; no paid custom visual is needed.
 
 Python 3.11+; standard library only. From the repository root:
 
-For the included demo snapshot, first run `python src/prepare_demo.py`. The
-checksum-verified `sample-data.zip` bundles the clean CSVs and SQLite handoff so
-you can explore without downloading the larger raw source archive.
+To unpack and check the included demo snapshot:
+
+```powershell
+python src/prepare_demo.py
+python src/verify_snapshot.py
+```
+
+The checksum-verified `sample-data.zip` bundles the clean CSVs and SQLite handoff.
+These two commands are sufficient for the demo; the PBIX already contains its
+imported data. To rebuild from the original Kaggle CSVs instead:
 
 ```powershell
 python src/download_data.py
@@ -103,6 +110,9 @@ Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), historica
 2016–2018 records. Not commissioned work for Olist or Albertsons. No costs,
 profit, inventory, verified savings or causal delivery explanation is available.
 Final purchase months are partial. Category filters reach item metrics only.
+The order-status chart counts each order's recorded status at dataset capture.
+Delivered and Shipped are separate current-status groups, not cumulative counts
+of orders that have ever reached those milestones.
 
 Original reusable code is MIT licensed. Source data, derived tables and embedded
 report data retain **CC BY-NC-SA 4.0**, including noncommercial and share-alike

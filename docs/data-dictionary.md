@@ -22,7 +22,7 @@ and Refresh are disconnected, full-snapshot diagnostic tables.
 | Orders / Order ID | Text | Pseudonymous unique source order key |
 | Orders / Purchase Date | Date | Source order purchase calendar date |
 | Orders / State | Text | Customer state, validated Brazilian abbreviation |
-| Orders / Status | Text | Source status with display capitalization |
+| Orders / Status | Text | Recorded status at dataset capture, with display capitalization; one status per order, not milestone history |
 | Orders / Delivered Date, Estimated Date | Nullable date | Source actual and promised calendar dates |
 | Orders / Item Count | Integer | Number of source item rows aggregated by order |
 | Orders / Merchandise Cents, Freight Cents | Integer | Exact item prices / freight aggregated by order |
