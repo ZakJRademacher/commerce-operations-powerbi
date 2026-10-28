@@ -1,5 +1,7 @@
 # Commerce Operations | Power BI
 
+![Power BI](https://img.shields.io/badge/Power%20BI-C5A42C?style=flat-square) ![DAX](https://img.shields.io/badge/DAX-796A36?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-31566D?style=flat-square)
+
 **Where should an operations team investigate late deliveries, and how does workload differ from service rate?**
 
 A four-page **Power BI** report built from six related historical source files, with **Python/SQLite** validation and separate order/item facts.
