@@ -26,6 +26,16 @@ The snapshot contains **99,441 orders and 112,650 item lines**. Dates and States
 
 ## Open and refresh
 
+### Local SQL/dbt extension
+
+The same six inputs now also build a local **DuckDB + dbt Core** workflow: 19 modular SQL models, 103 data tests, documented lineage and separate verified snapshots. The demo's seven exported business tables reconcile field for field with the published Power BI baseline. Original report files and their data pointer are preserved.
+
+Start with **Run Demo SQL.cmd** on the configured computer, then [your first SQL lesson](docs/SQL_DBT_FIRST_LESSON.md). [Setup, model layers and Power BI handoff](dbt/README.md) · [Verification record](docs/dbt-verification.json).
+
+This phase uses complete local snapshot rebuilds. Cloud warehouse deployment, incremental materialization and a new native Power BI desktop refresh are not claimed. The workflow accepts new complete snapshots and corrections, with tests and a checked publication step.
+
+### Original Python/SQLite refresh
+
 Download and extract the repository ZIP, then open the PBIX; its sample is already imported. To unpack and validate the included refresh inputs, run from the repository root with Python 3.11+:
 
 ```powershell

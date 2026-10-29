@@ -1,0 +1,24 @@
+version: 2
+sources:
+  - name: olist
+    schema: raw
+    description: >
+      Six unchanged historical Olist CSV inputs, landed with only relevant columns.
+      String values remain raw; source_record_number is a logical data-row number.
+      File hashes and input counts are recorded in ingestion_metadata.
+      This is a complete snapshot, not a stream of order events.
+    tables:
+      - name: orders
+        description: One source order; includes recorded status and local timestamps.
+      - name: customers
+        description: Customer key and Brazilian state only; no names or detailed locations.
+      - name: items
+        description: One source order/item-number pair, with merchandise and freight in BRL.
+      - name: payments
+        description: One source order/payment-sequence pair; multiple payments can belong to one order.
+      - name: products
+        description: Product key and original Portuguese category.
+      - name: translations
+        description: Supplied Portuguese-to-English category labels.
+      - name: ingestion_metadata
+        description: One row per input file, with SHA-256, count, load time and snapshot identifier.

@@ -1,0 +1,11 @@
+commerce_sql:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('COMMERCE_DUCKDB_PATH') }}"
+      schema: analytics
+      threads: 2
+      settings:
+        preserve_insertion_order: true
+        enable_progress_bar: false

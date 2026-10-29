@@ -9,3 +9,10 @@ __pycache__/
 *.zip
 !sample-data.zip
 data/processed/*
+data/dbt/
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+*.duckdb
+*.duckdb.wal
+.venv/

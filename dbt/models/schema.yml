@@ -1,0 +1,440 @@
+version: 2
+models:
+- name: stg_orders
+  description: One typed row per source order. Source timestamps have no reliable
+    timezone contract.
+  columns:
+  - name: order_id
+    description: Source order key.
+    data_tests:
+    - not_null
+    - unique
+  - name: customer_id
+    description: Source customer key.
+    data_tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('stg_customers')
+          field: customer_id
+  - name: source_status
+    description: Original source status; eligibility requires delivered.
+    data_tests:
+    - not_null
+  - name: status
+    description: Display status.
+    data_tests:
+    - not_null
+  - name: purchased_at
+    description: Source local purchase timestamp.
+    data_tests:
+    - not_null
+  - name: delivered_at
+    description: Nullable actual source local timestamp.
+  - name: estimated_at
+    description: Nullable promised source local timestamp.
+- name: stg_customers
+  description: One row per customer key; state only, no detailed location.
+  columns:
+  - name: customer_id
+    description: Source customer key.
+    data_tests:
+    - not_null
+    - unique
+  - name: state
+    description: Validated Brazilian state.
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values:
+          - AC
+          - AL
+          - AP
+          - AM
+          - BA
+          - CE
+          - DF
+          - ES
+          - GO
+          - MA
+          - MT
+          - MS
+          - MG
+          - PA
+          - PB
+          - PR
+          - PE
+          - PI
+          - RJ
+          - RN
+          - RS
+          - RO
+          - RR
+          - SC
+          - SP
+          - SE
+          - TO
+- name: stg_items
+  description: One typed row per source order/item pair.
+  columns:
+  - name: order_id
+    description: Parent order key.
+    data_tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('stg_orders')
+          field: order_id
+  - name: item_number
+    description: Item number within order.
+    data_tests:
+    - not_null
+  - name: product_id
+    description: Source product key.
+    data_tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('stg_products')
+          field: product_id
+  - name: price_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+  - name: freight_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+  data_tests:
+  - combination_unique:
+      arguments:
+        columns:
+        - order_id
+        - item_number
+- name: stg_payments
+  description: One typed row per order/payment sequence. Aggregate before joining
+    to orders.
+  columns:
+  - name: order_id
+    description: Parent order key.
+    data_tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('stg_orders')
+          field: order_id
+  - name: payment_sequence
+    description: Payment number within order.
+    data_tests:
+    - not_null
+  - name: payment_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+  data_tests:
+  - combination_unique:
+      arguments:
+        columns:
+        - order_id
+        - payment_sequence
+- name: stg_products
+  description: One product key and optional source category.
+  columns:
+  - name: product_id
+    description: Source product key.
+    data_tests:
+    - not_null
+    - unique
+  - name: source_category
+    description: Nullable original category; missing becomes Uncategorized.
+- name: stg_translations
+  description: One supplied translation per original category.
+  columns:
+  - name: source_category
+    description: Original Portuguese category key.
+    data_tests:
+    - not_null
+    - unique
+  - name: english_category
+    description: Optional supplied English label; missing uses the original category.
+- name: int_item_totals
+  description: One row per order with items; prevents item/payment join fan-out.
+  columns:
+  - name: order_id
+    description: Order grain.
+    data_tests:
+    - not_null
+    - unique
+  - name: item_count
+    description: Number of source item rows.
+    data_tests:
+    - not_null
+  - name: merchandise_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+  - name: freight_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+- name: int_payment_totals
+  description: One row per order with payments. An absent row is different from an
+    observed zero.
+  columns:
+  - name: order_id
+    description: Order grain.
+    data_tests:
+    - not_null
+    - unique
+  - name: payment_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+- name: int_item_details
+  description: One enriched row per source item; safe many-to-one dimension joins.
+  columns: []
+  data_tests:
+  - combination_unique:
+      arguments:
+        columns:
+        - order_id
+        - item_number
+- name: int_category_ranking
+  description: Delivered merchandise ranks over the whole snapshot; source occurrence
+    breaks ties.
+  columns:
+  - name: category
+    description: Category label.
+    data_tests:
+    - not_null
+    - unique
+- name: int_order_details
+  description: One order after separate item/payment aggregates; keeps original timestamps
+    for eligibility.
+  columns:
+  - name: order_id
+    description: Order grain.
+    data_tests:
+    - not_null
+    - unique
+- name: fct_orders
+  description: One row per source order, all statuses. Order measures use this table;
+    category filters must not fan out orders.
+  columns:
+  - name: order_id
+    description: Source order key.
+    data_tests:
+    - not_null
+    - unique
+  - name: purchase_date
+    description: Source local purchase date.
+    data_tests:
+    - not_null
+  - name: state
+    description: Brazilian customer state.
+    data_tests:
+    - not_null
+  - name: status
+    description: Recorded snapshot status.
+    data_tests:
+    - not_null
+  - name: delivered_date
+    description: Optional actual calendar date.
+  - name: estimated_date
+    description: Optional promised calendar date.
+  - name: item_count
+    description: Zero if order has no source item rows.
+    data_tests:
+    - not_null
+  - name: merchandise_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+  - name: freight_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+  - name: payment_cents
+    description: Nullable sum of payment cents. NULL means no rows; zero may be a
+      real payment.
+    data_tests:
+    - non_negative
+  - name: payment_difference_cents
+    description: Payment minus merchandise and freight; nonzero values remain visible.
+  - name: delivery_eligible
+    description: 1 only for delivered status with actual/estimated dates and actual
+      >= purchase timestamp.
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values:
+          - 0
+          - 1
+  - name: late
+    description: 1 only when eligible and actual calendar date exceeds promised date.
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values:
+          - 0
+          - 1
+  - name: delivery_days
+    description: Eligible actual date minus purchase date, in calendar days.
+    data_tests:
+    - non_negative
+  - name: late_days
+    description: Eligible positive lateness in calendar days; zero when on time.
+    data_tests:
+    - non_negative
+  - name: delivery_band
+    description: Fixed calendar-day delivery bands; Not eligible retains exclusions.
+    data_tests:
+    - not_null
+- name: fct_order_items
+  description: One row per order/item-number. Merchandise excludes freight and is
+    not profit or accounting revenue.
+  columns:
+  - name: order_id
+    description: Parent order.
+    data_tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('fct_orders')
+          field: order_id
+  - name: item_number
+    description: Item number within order.
+    data_tests:
+    - not_null
+  - name: product_id
+    description: Source product key.
+    data_tests:
+    - not_null
+  - name: purchase_date
+    description: Order purchase calendar date.
+    data_tests:
+    - not_null
+  - name: state
+    description: Brazilian customer state.
+    data_tests:
+    - not_null
+  - name: status
+    description: Recorded parent order status.
+    data_tests:
+    - not_null
+  - name: category
+    description: English translation, Portuguese fallback or Uncategorized.
+    data_tests:
+    - not_null
+  - name: category_mapping
+    description: Visible source mapping decision.
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values:
+          - English translation
+          - Portuguese fallback
+          - Missing source category
+  - name: price_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+  - name: freight_cents
+    description: Exact nonnegative integer cents in BRL.
+    data_tests:
+    - not_null
+    - non_negative
+  - name: category_group
+    description: Fixed whole-snapshot delivered top ten; otherwise Other categories.
+    data_tests:
+    - not_null
+  data_tests:
+  - combination_unique:
+      arguments:
+        columns:
+        - order_id
+        - item_number
+- name: dim_dates
+  description: One calendar date spanning minimum to maximum purchase date.
+  columns:
+  - name: date
+    description: Calendar date key.
+    data_tests:
+    - not_null
+    - unique
+- name: dim_states
+  description: One row for each of the 27 Brazilian states/federal district.
+  columns:
+  - name: state
+    description: State key.
+    data_tests:
+    - not_null
+    - unique
+- name: dim_categories
+  description: One distinct display category observed in item facts.
+  columns:
+  - name: category
+    description: Display category key.
+    data_tests:
+    - not_null
+    - unique
+- name: order_exceptions
+  description: One order/rule event; one order may have several different events.
+  columns:
+  - name: order_id
+    description: Affected order.
+    data_tests:
+    - not_null
+    - relationships:
+        arguments:
+          to: ref('fct_orders')
+          field: order_id
+  - name: rule
+    description: Documented exception rule.
+    data_tests:
+    - not_null
+  - name: detail
+    description: Explanation for human review.
+    data_tests:
+    - not_null
+  data_tests:
+  - combination_unique:
+      arguments:
+        columns:
+        - order_id
+        - rule
+- name: quality_checks
+  description: Whole-snapshot diagnostics; not filtered by report slicers.
+  columns:
+  - name: check_name
+    description: Diagnostic name.
+    data_tests:
+    - not_null
+    - unique
+  - name: rows
+    description: Affected rows for this rule; counts can overlap.
+    data_tests:
+    - not_null
+    - non_negative
+- name: refresh_metadata
+  description: One row describing this build and input counts; metadata changes between
+    builds.
+  columns:
+  - name: snapshot
+    description: Content and transformation fingerprint.
+    data_tests:
+    - not_null
+    - unique
