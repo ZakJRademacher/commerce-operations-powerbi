@@ -1,0 +1,18 @@
+{
+  "source_snapshot": "954dbeb91a2096f6",
+  "original_report_preserved": true,
+  "native_refresh": "passed in Power BI Desktop 2026-10-29",
+  "expected": {
+    "orders": 99441,
+    "eligible": 96470,
+    "late": 6534
+  },
+  "native_pages_reviewed": 2,
+  "filters_restored": "All",
+  "native_filter_check": {
+    "state": "AL",
+    "eligible": 397,
+    "late": 85,
+    "late_rate_display": "21.4%"
+  }
+}

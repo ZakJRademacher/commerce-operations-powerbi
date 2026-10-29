@@ -1,0 +1,29 @@
+{
+  "name": "Fieldnotes / Decision reports",
+  "dataColors": [
+    "#147D80",
+    "#BE5D50",
+    "#BA852D",
+    "#667C91",
+    "#9BAEAA"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#203B43",
+  "tableAccent": "#147D80",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 13,
+      "color": "#203B43"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 11,
+      "color": "#61777D"
+    },
+    "callout": {
+      "fontFace": "Segoe UI",
+      "color": "#203B43"
+    }
+  }
+}

@@ -4,11 +4,13 @@
 
 **Where should an operations team investigate late deliveries, and how does workload differ from service rate?**
 
-A four-page **Power BI** report built from six related historical source files, with **Python/SQLite** validation and separate order/item facts.
+A focused two-page **Power BI** delivery-prioritization report built from six related historical source files, with **Python/SQLite** validation and separate order/item facts. The original broader report is retained.
 
-![Power BI order and delivery overview](docs/images/dashboard-1.png)
+**Current report:** [Delivery Priorities / Power BI](deliverables/Commerce%20Delivery%20Priorities.pbix) · [Open / refresh guide](powerbi-rebuild/README.md)
 
-[Preview the report](deliverables/Commerce%20Operations%20Dashboard.pdf) · [Download the interactive PBIX](deliverables/Commerce%20Operations%20Dashboard.pbix) · [Read the case study](docs/case-study.md)
+![Power BI delivery-prioritization report](deliverables/delivery-priorities-preview.png)
+
+[Earlier four-page PDF](deliverables/Commerce%20Operations%20Dashboard.pdf) · [Earlier four-page PBIX](deliverables/Commerce%20Operations%20Dashboard.pbix) · [Read the case study](docs/case-study.md)
 
 ## Findings
 
@@ -25,6 +27,7 @@ The snapshot contains **99,441 orders and 112,650 item lines**. Dates and States
 [Model and table grains](docs/data-dictionary.md) · [DAX measures](powerbi/measures.dax) · [SQL review queries](sql/operations_review.sql) · [Editable Power BI project](powerbi/Commerce.pbip)
 
 ## Open and refresh
+
 
 Download and extract the repository ZIP, then open the PBIX; its sample is already imported. To unpack and validate the included refresh inputs, run from the repository root with Python 3.11+:
 
@@ -48,3 +51,4 @@ Set Power Query's **DataRoot** parameter to your local `data/processed` folder, 
 Independent demonstration using Olist's historical 2016–2018 data. Final purchase months are partial; the trend is not evidence of a current business decline. Statuses describe the recorded snapshot, not milestone history. Merchandise excludes freight and is not profit or recognized revenue.
 
 Refresh runs on demand; cloud scheduling is not configured. Original code is [MIT](LICENSE); source data and derived report data retain **CC BY-NC-SA 4.0**, including noncommercial and share-alike conditions. See the source guide before reusing data.
+

@@ -1,0 +1,757 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DataRoot\", \"Orders\", \"Items\", \"Dates\", \"States\", \"Categories\", \"Quality\", \"Refresh\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DataRoot",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"C:/Users/zakjr/OneDrive/Data Analytics Projects/01 Portfolio Projects/commerce-operations-powerbi/powerbi-rebuild/data\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "73076d87-a437-4f4f-a976-75a32747ee57"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "Orders_Dates",
+        "fromColumn": "Purchase Date",
+        "fromTable": "Orders",
+        "toColumn": "Date",
+        "toTable": "Dates"
+      },
+      {
+        "name": "Orders_States",
+        "fromColumn": "State",
+        "fromTable": "Orders",
+        "toColumn": "State",
+        "toTable": "States"
+      },
+      {
+        "name": "Items_Dates",
+        "fromColumn": "Purchase Date",
+        "fromTable": "Items",
+        "toColumn": "Date",
+        "toTable": "Dates"
+      },
+      {
+        "name": "Items_States",
+        "fromColumn": "State",
+        "fromTable": "Items",
+        "toColumn": "State",
+        "toTable": "States"
+      },
+      {
+        "name": "Items_Categories",
+        "fromColumn": "Category",
+        "fromTable": "Items",
+        "toColumn": "Category",
+        "toTable": "Categories"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Orders",
+        "columns": [
+          {
+            "name": "Order ID",
+            "dataType": "string",
+            "lineageTag": "a6949a17-b891-453d-83cb-06deb58fb058",
+            "sourceColumn": "Order ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Purchase Date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "8bf4591f-c60a-441a-81bd-ba5a91718808",
+            "sourceColumn": "Purchase Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "lineageTag": "a2aebea6-3723-46a5-9e01-09c6fce05e79",
+            "sourceColumn": "State",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "lineageTag": "4af84a39-3711-4c14-a1a0-b56a58a56daa",
+            "sourceColumn": "Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Delivered Date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "234911cb-72c5-4764-8cc3-a5bb5b1a4f61",
+            "sourceColumn": "Delivered Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Estimated Date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "dc7deb7a-6ea5-4aa3-bf83-3307f9952780",
+            "sourceColumn": "Estimated Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Item Count",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "90fc6f56-2864-4911-b736-b70361994b30",
+            "sourceColumn": "Item Count",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Merchandise Cents",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "e461c262-a3bc-4a61-b089-872e9b0e9e01",
+            "sourceColumn": "Merchandise Cents",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Freight Cents",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "b528a3a2-6830-4df4-a20b-1a102757769f",
+            "sourceColumn": "Freight Cents",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Payment Cents",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "d1b5d917-bd1c-498a-b28b-2e924a058edb",
+            "sourceColumn": "Payment Cents",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Payment Difference Cents",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "c2bddff0-84a6-4707-94c8-567768d6cacc",
+            "sourceColumn": "Payment Difference Cents",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Delivery Eligible",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "6b453982-badb-438e-8ed4-d05938d36084",
+            "sourceColumn": "Delivery Eligible",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Late",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "93c95e65-f426-4724-9653-e9d967a593c8",
+            "sourceColumn": "Late",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Delivery Days",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "67b782b0-b718-4e2b-87cd-27fef74f998e",
+            "sourceColumn": "Delivery Days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Late Days",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "8dab6c8c-2965-4de2-ab58-ba14e681a177",
+            "sourceColumn": "Late Days",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Delivery Band",
+            "dataType": "string",
+            "lineageTag": "ab4067af-c198-4831-bf6f-a9cd10a2c100",
+            "sourceColumn": "Delivery Band",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2104060e-4c83-4333-afd8-a3ac5bfcce3d",
+        "measures": [
+          {
+            "name": "Orders",
+            "description": "One row per source order; all statuses retained.",
+            "expression": "COUNTROWS(Orders)",
+            "formatString": "#,0",
+            "lineageTag": "4917c981-a739-461b-8e15-4cad7b4ac950"
+          },
+          {
+            "name": "Delivered Orders",
+            "description": "Source status Delivered, including those missing timing.",
+            "expression": "CALCULATE([Orders], Orders[Status] = \"Delivered\")",
+            "formatString": "#,0",
+            "lineageTag": "9b84f083-b82d-4871-8a09-2449c37c65e4"
+          },
+          {
+            "name": "Delivered Merchandise BRL",
+            "description": "Delivered order item prices, excludes freight. Not profit or recognized revenue.",
+            "expression": "DIVIDE(CALCULATE(SUM(Orders[Merchandise Cents]), Orders[Status] = \"Delivered\"), 100)",
+            "formatString": "\"R$ \"#,0.00",
+            "lineageTag": "ce6d3408-ef2c-4162-95a9-6b66066e73bc"
+          },
+          {
+            "name": "Eligible Deliveries",
+            "description": "Delivered status and valid actual/estimated timing; delivery not before purchase.",
+            "expression": "SUM(Orders[Delivery Eligible])",
+            "formatString": "#,0",
+            "lineageTag": "83f856dd-a90a-4cc1-81a2-0482c662cd6f"
+          },
+          {
+            "name": "Late Deliveries",
+            "description": "Eligible deliveries whose actual calendar date exceeds estimated calendar date.",
+            "expression": "SUM(Orders[Late])",
+            "formatString": "#,0",
+            "lineageTag": "7f18bfeb-72c3-42a6-a500-002f96e26f7c"
+          },
+          {
+            "name": "On Time Rate",
+            "description": "Eligible denominator; blank where none are eligible.",
+            "expression": "DIVIDE([Eligible Deliveries] - [Late Deliveries], [Eligible Deliveries])",
+            "formatString": "0.0%",
+            "lineageTag": "92bc677e-986e-4ed6-8cd0-c50b54a66f27"
+          },
+          {
+            "name": "Late Rate Trend",
+            "description": "Monthly trend suppressed where fewer than 100 eligible deliveries; totals elsewhere remain unchanged.",
+            "expression": "IF([Eligible Deliveries] >= 100, [Late Rate])",
+            "formatString": "0.0%",
+            "lineageTag": "bc56f8a9-3bb4-4fac-b43a-a7a8c88863ee"
+          },
+          {
+            "name": "Late Rate",
+            "description": "Late eligible deliveries divided by eligible deliveries.",
+            "expression": "DIVIDE([Late Deliveries], [Eligible Deliveries])",
+            "formatString": "0.0%",
+            "lineageTag": "4a224426-9307-44ba-b4ba-661a03f6793e"
+          },
+          {
+            "name": "Median Delivery Days",
+            "description": "Median calendar days purchase to delivery for eligible orders.",
+            "expression": "CALCULATE(MEDIAN(Orders[Delivery Days]), Orders[Delivery Eligible] = 1)",
+            "formatString": "0.0\" days\"",
+            "lineageTag": "09f37348-d4f9-481b-967c-c7de987cffcd"
+          },
+          {
+            "name": "Average Late Days",
+            "description": "Mean lateness among late orders only.",
+            "expression": "CALCULATE(AVERAGE(Orders[Late Days]), Orders[Late] = 1)",
+            "formatString": "0.0\" days\"",
+            "lineageTag": "2e3b8c9c-d7f1-4e6f-92be-1841624f73fd"
+          },
+          {
+            "name": "Timing Exclusions",
+            "description": "Delivered orders excluded from timing calculations.",
+            "expression": "[Delivered Orders] - [Eligible Deliveries]",
+            "formatString": "#,0",
+            "lineageTag": "d5dd8555-becc-4e7e-b39a-39d76652a858"
+          },
+          {
+            "name": "Review Late Rate",
+            "description": "Rate shown only for selections with at least 100 eligible deliveries; this is a readability guard, not a confidence interval.",
+            "expression": "IF([Eligible Deliveries] >= 100, [Late Rate])",
+            "formatString": "0.0%",
+            "lineageTag": "17cabd83-dfeb-4dba-8de3-7bea274a6f8b"
+          },
+          {
+            "name": "Eligible Share",
+            "expression": "DIVIDE([Eligible Deliveries], CALCULATE([Eligible Deliveries], REMOVEFILTERS(States)))",
+            "formatString": "0.0%",
+            "lineageTag": "d6b54b02-a79e-4abf-b072-adc832a4d5a1"
+          },
+          {
+            "name": "Selection Note",
+            "expression": "\"Eligible deliveries: \" & FORMAT([Eligible Deliveries], \"#,0\") & \". Late means actual calendar delivery date after estimated date. Rates are blank where N < 100.\"",
+            "lineageTag": "6a55f583-4af0-44df-8aa0-2978981f76a7"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Orders",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataRoot & \"/latest.json\")),",
+                "    Contract = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"/snapshots/\" & Contract & \"/Orders.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Order ID\", type text}, {\"Purchase Date\", type date}, {\"State\", type text}, {\"Status\", type text}, {\"Delivered Date\", type date}, {\"Estimated Date\", type date}, {\"Item Count\", Int64.Type}, {\"Merchandise Cents\", Int64.Type}, {\"Freight Cents\", Int64.Type}, {\"Payment Cents\", Int64.Type}, {\"Payment Difference Cents\", Int64.Type}, {\"Delivery Eligible\", Int64.Type}, {\"Late\", Int64.Type}, {\"Delivery Days\", Int64.Type}, {\"Late Days\", Int64.Type}, {\"Delivery Band\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Items",
+        "columns": [
+          {
+            "name": "Order ID",
+            "dataType": "string",
+            "lineageTag": "2ddb843a-4c88-4dad-a532-8cb132598909",
+            "sourceColumn": "Order ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Item Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "86e112d6-93b1-4b6d-acca-5ed7c8750ddb",
+            "sourceColumn": "Item Number",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Product ID",
+            "dataType": "string",
+            "lineageTag": "d7480069-79a3-416f-a97d-1a4b1a539e39",
+            "sourceColumn": "Product ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Purchase Date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "fe9a397e-a428-41f9-bd23-0cd1de580984",
+            "sourceColumn": "Purchase Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "lineageTag": "af63b4ec-3efa-4572-8261-bc5cada90084",
+            "sourceColumn": "State",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "lineageTag": "4d7c971a-3826-4429-9921-8790b8347d21",
+            "sourceColumn": "Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Category",
+            "dataType": "string",
+            "lineageTag": "a8842b81-911d-43d4-8195-4891efa6fcf8",
+            "sourceColumn": "Category",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Category Mapping",
+            "dataType": "string",
+            "lineageTag": "6a003c17-a7cc-436e-97a9-db41c42017a1",
+            "sourceColumn": "Category Mapping",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Price Cents",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "c3e16859-882f-4e9f-9f96-5d7be8e2753e",
+            "sourceColumn": "Price Cents",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Freight Cents",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "88589c26-a5e2-4da3-8d8b-e47c0eb1d56a",
+            "sourceColumn": "Freight Cents",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Category Group",
+            "dataType": "string",
+            "lineageTag": "8f7b5ff7-87e1-43c0-82de-cff2150769cb",
+            "sourceColumn": "Category Group",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a6e46d35-20d8-422c-8910-292724827963",
+        "measures": [
+          {
+            "name": "Item Lines",
+            "description": "One row per source item; each row represents one ordered unit.",
+            "expression": "COUNTROWS(Items)",
+            "formatString": "#,0",
+            "lineageTag": "79f469cf-fb0f-4116-8ce1-044bcf4bae26"
+          },
+          {
+            "name": "Delivered Item Lines",
+            "description": "Source item rows whose order status is delivered.",
+            "expression": "CALCULATE([Item Lines], Items[Status] = \"Delivered\")",
+            "formatString": "#,0",
+            "lineageTag": "c5231314-6256-4a29-9592-8dd055501c7f"
+          },
+          {
+            "name": "Category Merchandise BRL",
+            "description": "Delivered item prices; responds to category filters.",
+            "expression": "DIVIDE(CALCULATE(SUM(Items[Price Cents]), Items[Status] = \"Delivered\"), 100)",
+            "formatString": "\"R$ \"#,0.00",
+            "lineageTag": "283ad534-cd40-47c5-a090-49dcc9c29f71"
+          },
+          {
+            "name": "Delivered Freight BRL",
+            "description": "Source item-level freight charges for delivered orders.",
+            "expression": "DIVIDE(CALCULATE(SUM(Items[Freight Cents]), Items[Status] = \"Delivered\"), 100)",
+            "formatString": "\"R$ \"#,0.00",
+            "lineageTag": "eb061169-fda2-431b-96ce-592be690db24"
+          },
+          {
+            "name": "Freight to Merchandise",
+            "description": "Freight divided by merchandise; not margin and not share of gross checkout.",
+            "expression": "DIVIDE([Delivered Freight BRL], [Category Merchandise BRL])",
+            "formatString": "0.0%",
+            "lineageTag": "5af6d5a2-052a-40e1-b30e-567eb8c47a80"
+          },
+          {
+            "name": "Uncategorized Lines",
+            "description": "Item rows with missing source product category.",
+            "expression": "CALCULATE([Item Lines], Items[Category Mapping] = \"Missing source category\")",
+            "formatString": "#,0",
+            "lineageTag": "0d4f2543-7d91-4d47-977f-87ed72d7322b"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Items",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataRoot & \"/latest.json\")),",
+                "    Contract = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"/snapshots/\" & Contract & \"/Items.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Order ID\", type text}, {\"Item Number\", Int64.Type}, {\"Product ID\", type text}, {\"Purchase Date\", type date}, {\"State\", type text}, {\"Status\", type text}, {\"Category\", type text}, {\"Category Mapping\", type text}, {\"Price Cents\", Int64.Type}, {\"Freight Cents\", Int64.Type}, {\"Category Group\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dates",
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "245363b1-9398-451e-9a67-8e5f28aff4fa",
+            "sourceColumn": "Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "lineageTag": "1c6e98e5-1372-43e6-9fbb-9a53b462890a",
+            "sourceColumn": "Month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "lineageTag": "e88348a0-2fa4-492f-a08d-2aa8880256d0",
+            "sourceColumn": "Year",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "377abc99-09ca-439b-90f5-7627a999ed9a",
+        "partitions": [
+          {
+            "name": "Dates",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataRoot & \"/latest.json\")),",
+                "    Contract = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"/snapshots/\" & Contract & \"/Dates.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Date\", type date}, {\"Month\", type text}, {\"Year\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "States",
+        "columns": [
+          {
+            "name": "State",
+            "dataType": "string",
+            "lineageTag": "737b71c0-a10f-48f9-9d2e-bcfb44b4d054",
+            "sourceColumn": "State",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "7a2ac95b-65d1-45fe-bbc5-d41f36785ec7",
+        "partitions": [
+          {
+            "name": "States",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataRoot & \"/latest.json\")),",
+                "    Contract = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"/snapshots/\" & Contract & \"/States.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"State\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Categories",
+        "columns": [
+          {
+            "name": "Category",
+            "dataType": "string",
+            "lineageTag": "cf56a719-b478-4e65-a1c1-cc6780ddb2fe",
+            "sourceColumn": "Category",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "26f2a271-176b-4cb0-be6c-ed2c612c59c2",
+        "partitions": [
+          {
+            "name": "Categories",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataRoot & \"/latest.json\")),",
+                "    Contract = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"/snapshots/\" & Contract & \"/Categories.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Category\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Quality",
+        "columns": [
+          {
+            "name": "Check",
+            "dataType": "string",
+            "lineageTag": "f83a669b-d9af-4c3f-9280-0f2f7df2c6e8",
+            "sourceColumn": "Check",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Rows",
+            "dataType": "int64",
+            "lineageTag": "6953956e-1c70-40ad-986d-6fd0d05ce588",
+            "sourceColumn": "Rows",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a99c77ee-3bcc-45ae-876c-f29b3ce98925",
+        "measures": [
+          {
+            "name": "Flagged Rows",
+            "description": "Row count for the selected quality check; grains can differ and overlap.",
+            "expression": "IF(ISINSCOPE(Quality[Check]), SUM(Quality[Rows]))",
+            "formatString": "#,0",
+            "lineageTag": "5a0eb2a1-7e7c-4724-9c57-206978061450"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Quality",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataRoot & \"/latest.json\")),",
+                "    Contract = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"/snapshots/\" & Contract & \"/Quality.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Check\", type text}, {\"Rows\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Refresh",
+        "columns": [
+          {
+            "name": "Snapshot",
+            "dataType": "string",
+            "lineageTag": "78fe7485-c76d-4589-be14-64ef65013258",
+            "sourceColumn": "Snapshot",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Built UTC",
+            "dataType": "string",
+            "lineageTag": "451517fa-5897-46a8-95f2-0684056e7f94",
+            "sourceColumn": "Built UTC",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Source Orders",
+            "dataType": "int64",
+            "lineageTag": "8d1971a8-6121-47c5-ac29-69f7026fcb4c",
+            "sourceColumn": "Source Orders",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Source Items",
+            "dataType": "int64",
+            "lineageTag": "1b20a02d-0cd0-40b6-99b3-2114fb57fde8",
+            "sourceColumn": "Source Items",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Source Exception Events",
+            "dataType": "int64",
+            "lineageTag": "32ad7c68-6fb3-4a93-bf8f-5d13c074e511",
+            "sourceColumn": "Exception Events",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Source Orders With Exceptions",
+            "dataType": "int64",
+            "lineageTag": "ffaa97e6-86d8-423f-9af0-b4ae9d9d6f5f",
+            "sourceColumn": "Orders With Exceptions",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "55358c1a-e963-4453-a296-220bcec0d253",
+        "measures": [
+          {
+            "name": "Snapshot Orders",
+            "description": "Full unfiltered snapshot order count.",
+            "expression": "SUM('Refresh'[Source Orders])",
+            "formatString": "#,0",
+            "lineageTag": "727fcee0-4d89-49b0-af12-e7d88ab2cd9a"
+          },
+          {
+            "name": "Snapshot Items",
+            "description": "Full unfiltered snapshot item count.",
+            "expression": "SUM('Refresh'[Source Items])",
+            "formatString": "#,0",
+            "lineageTag": "3769ce16-9a3c-49e7-9a37-24e6bf2b9549"
+          },
+          {
+            "name": "Orders With Exceptions",
+            "description": "Distinct orders with one or more exception events.",
+            "expression": "SUM('Refresh'[Source Orders With Exceptions])",
+            "formatString": "#,0",
+            "lineageTag": "e7e96afe-82b1-493e-a340-c2029c720125"
+          },
+          {
+            "name": "Exception Events",
+            "description": "Events can overlap; do not add them as distinct affected orders.",
+            "expression": "SUM('Refresh'[Source Exception Events])",
+            "formatString": "#,0",
+            "lineageTag": "fe508ada-8347-4bc4-97db-c5f8ae927b88"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Refresh",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Pointer = Json.Document(File.Contents(DataRoot & \"/latest.json\")),",
+                "    Contract = if Pointer[contract_version] = 1 then Pointer[snapshot] else error \"Unsupported data contract\",",
+                "    Source = Csv.Document(File.Contents(DataRoot & \"/snapshots/\" & Contract & \"/Refresh.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"Snapshot\", type text}, {\"Built UTC\", type text}, {\"Source Orders\", Int64.Type}, {\"Source Items\", Int64.Type}, {\"Exception Events\", Int64.Type}, {\"Orders With Exceptions\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
