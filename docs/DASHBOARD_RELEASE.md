@@ -1,5 +1,7 @@
 # Dashboard presentation release — November 1, 2026
 
+> Current download note: the Sales and Hotel Tableau workbooks were published later on November 1. The preview-only wording below records the earlier presentation release. See each project README for current downloads.
+
 The working dashboard was substantially recomposed before its new cover and screenshots were made. It uses a shared midnight navy, electric blue and warm orange palette, a persistent control rail, clear page navigation, prominent scorecards and larger chart panels. Original analytical definitions and source attribution remain in the report.
 
 The cross-project comparison passed 175 source-data and report-definition checks against the local pre-redesign baseline. A separate comparison of the curated publication copies against their current public repository snapshots passed all 249 checks. These are different baselines, not additive test counts. Current local native reports were opened, refreshed, inspected page by page, saved and reopened from their packages. Refreshed Power BI downloads are included publicly. Redesigned Tableau workbooks remain local under the existing preview-only arrangement; earlier public Tableau downloads retain their previous layouts and working URLs. Representative Hotel, Marketing, Sales and Commerce filters matched independent controls. Package integrity and packed Power BI visual positions, queries and filters were checked separately.

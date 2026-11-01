@@ -1,29 +1,34 @@
-# Commerce Operations | Power BI
+# Commerce Operations
 
-**Where should delivery operations investigate, considering both workload and late rate?**
+A state with the most late deliveries isn't necessarily the state with the highest late rate. I built this review to compare both and give an operations team a clearer starting point for investigation.
 
-**6,534 of 96,470 eligible historical deliveries were late** (93.2% on time). SP and RJ contain **50.7%** of late deliveries, but their late rates differ: **4.5% versus 12.1%**. These are investigation leads, not explanations of cause or current service performance.
+The project combines six Olist source files into checked reporting tables and a **two-page Power BI delivery report**. Python and SQLite handle preparation and reconciliation across **99,441 orders and 112,650 item lines**.
 
-A two-page Power BI report uses Python/SQLite preparation, separate order/item grains and exact monetary cents over six related Olist sources.
+[View the report](deliverables/delivery-priorities-preview.png) · [Download the PBIX](deliverables/Commerce%20Delivery%20Priorities.pbix) · [Read the SQL investigation](docs/SQL_INVESTIGATION.md)
 
-[View current preview](deliverables/delivery-priorities-preview.png) · [Download current PBIX](deliverables/Commerce%20Delivery%20Priorities.pbix) · [SQL investigation and memo](docs/SQL_INVESTIGATION.md) · [Reproduce](#open-and-refresh)
+![Power BI delivery review showing late-delivery counts and rates](deliverables/delivery-priorities-preview.png)
 
-![Current Power BI delivery priorities: counts and eligible rates](deliverables/delivery-priorities-preview.png)
+## What I found
 
-The report's selectors update its metrics; text marked **unfiltered snapshot** remains a historical reference. The [new state/month SQL companion](sql/delivery_priorities.sql) uses safe item aggregation and dense rankings, retaining small populations. In July 2018, SP has 100 late deliveries among 2,712 eligible; AL has four among 22 and is not rate-ranked. [Full results and control totals](deliverables/delivery-investigation) · [Independent practice](docs/INDEPENDENT_PRACTICE.md).
+Across the historical snapshot, **6,534 of 96,470 eligible deliveries were late**, giving an on-time rate of **93.2%**. São Paulo and Rio de Janeiro accounted for **50.7%** of late deliveries, but their late rates differed: **4.5% and 12.1%**.
 
-The [earlier four-page PDF](deliverables/Commerce%20Operations%20Dashboard.pdf), [earlier PBIX](deliverables/Commerce%20Operations%20Dashboard.pbix) and [original case study](docs/case-study.md) are preserved as broader historical references. The source also contains **1,348** payment-versus-merchandise/freight differences, retained for reconciliation.
+The monthly SQL comparison shows why the selected period matters. In July 2018, SP had **100 late deliveries among 2,712 eligible orders**. AL had **four among 22**: a higher rate, based on a much smaller population. AL stays visible but isn't included in the rate ranking, which requires at least 100 eligible deliveries. That cutoff is a display rule, not a significance test.
 
-## Inspect the model
+I'd start by reviewing the late SP orders in that month and asking for carrier, route, and service-promise information. The source identifies a workload; it doesn't establish its cause or describe current service performance.
 
-The snapshot contains **99,441 orders and 112,650 item lines**. Dates and States filter both facts; Categories filter item measures only. Payments aggregate to order grain before joining, preventing multiplied totals. Amounts remain integer cents through preparation.
+[Query](sql/delivery_priorities.sql) · [All state/month results](deliverables/delivery-investigation) · [Definitions](docs/cleaning-rules.md)
 
-[Model and table grains](docs/data-dictionary.md) · [DAX measures](powerbi/measures.dax) · [SQL review queries](sql/operations_review.sql) · [Editable Power BI project](powerbi/Commerce.pbip)
+## How the model avoids double counting
+
+Orders and item lines stay in separate fact tables. Payments are summed to one row per order before joining, so split payments and multiple items don't multiply totals. Dates and states filter both facts; categories filter item measures only. Monetary values stay in integer cents through preparation.
+
+The source also has **1,348 payment-versus-merchandise/freight differences**. I kept these visible instead of forcing the figures to agree. Merchandise excludes freight and isn't a measure of profit or recognized revenue.
+
+[Model and table definitions](docs/data-dictionary.md) · [DAX](powerbi/measures.dax) · [SQL review queries](sql/operations_review.sql)
 
 ## Open and refresh
 
-
-Download and extract the repository ZIP, then open the PBIX; its sample is already imported. To unpack and validate the included refresh inputs, run from the repository root with Python 3.11+:
+Download and extract the repository, then open the PBIX in Power BI Desktop. Its sample data is already imported. For a local refresh, run these commands from the repository root with Python 3.11+:
 
 ```powershell
 python src/prepare_demo.py
@@ -31,25 +36,18 @@ python src/verify_snapshot.py
 python tools/investigate_delivery.py
 ```
 
-Set Power Query's **DataRoot** parameter to your local `data/processed` folder, then select **Home > Refresh**. [Current two-page report guide](powerbi-rebuild/README.md). The [broader historical report guide](docs/user-guide.md) remains available.
+Set Power Query's **DataRoot** parameter to your absolute `data/processed` folder, then select **Home > Refresh**. Filters update the report metrics; text labeled **unfiltered snapshot** stays fixed. [Current report guide](powerbi-rebuild/README.md).
 
-The analysis companion reads the published SQLite snapshot without changing it; no dbt or warehouse service is required. [Query walkthrough, findings and limits](docs/SQL_INVESTIGATION.md).
+The SQL companion reads the existing SQLite snapshot. It doesn't require dbt or a hosted warehouse. Source rebuilding and Desktop refresh are separate, on-demand steps.
 
-## Technical detail
+## Documentation and earlier reports
 
-- [Reproduction, validation and licensing detail](docs/PROJECT_GUIDE.md)
-- [Cleaning rules and metric definitions](docs/cleaning-rules.md)
-- [Validation record](docs/qa.md) · [Reconciliation evidence](docs/reconciliation.json)
-- [Python pipeline](src/pipeline.py) · [Tests](tests)
-- [Source and license](docs/source-and-license.md)
+- [Operating guide](docs/PROJECT_GUIDE.md) · [Validation](docs/qa.md) · [Reconciliation](docs/reconciliation.json)
+- [Source and license](docs/source-and-license.md) · [Pipeline](src/pipeline.py) · [Tests](tests)
+- [Earlier four-page report](deliverables/Commerce%20Operations%20Dashboard.pbix) · [PDF](deliverables/Commerce%20Operations%20Dashboard.pdf) · [Editable source](powerbi/Commerce.pbip)
+- [Case study](docs/case-study.md) · [Earlier report guide](docs/user-guide.md) · [Practice exercise](docs/INDEPENDENT_PRACTICE.md)
+- [Cover](deliverables/portfolio-cover-wide.png) · [Motion preview](deliverables/portfolio-motion.webm) · [Visual maintenance](docs/VISUAL_DESIGN.md) · [Presentation history](docs/DASHBOARD_RELEASE.md)
 
-## Scope
+This independent project uses Olist's historical 2016–2018 data. Final purchase months are partial, and order statuses describe the recorded snapshot rather than a full history of status changes. The local dbt extension is outside this published workflow.
 
-Independent demonstration using Olist's historical 2016–2018 data. Final purchase months are partial; the trend is not evidence of a current business decline. Statuses describe the recorded snapshot, not milestone history. Merchandise excludes freight and is not profit or recognized revenue.
-
-Refresh runs on demand; cloud scheduling is not configured. Original code is [MIT](LICENSE); source data and derived report data retain **CC BY-NC-SA 4.0**, including noncommercial and share-alike conditions. See the source guide before reusing data.
-
-
-## Presentation history
-
-[Cover preview](deliverables/portfolio-cover-wide.png) · [Motion cover](deliverables/portfolio-motion.webm) · [Design maintenance](docs/VISUAL_DESIGN.md) · [November 1 release record](docs/DASHBOARD_RELEASE.md). Covers are presentation assets; native report behavior is documented separately.
+Original code: [MIT](LICENSE). Source data and derived report data retain **CC BY-NC-SA 4.0**, including its noncommercial and share-alike conditions.

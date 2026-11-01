@@ -1,11 +1,12 @@
 # Commerce operations: from linked CSVs to decisions
 
+The current featured deliverable is the [two-page Delivery Priorities report](../powerbi-rebuild/README.md), with a [state/month SQL companion](SQL_INVESTIGATION.md). The four-page report described below remains a broader reference.
+
 ## Problem and deliverable
 
 An operations reviewer needs a quick way to compare delivery workload, service
 rates and merchandise categories without repeatedly joining six source files.
-This independent portfolio project uses Olist's historical Kaggle data, not paid
-client work. The deliverable is a four-page native Power BI report backed by a
+This independent project uses Olist's historical Kaggle data. The deliverable is a four-page native Power BI report backed by a
 repeatable Python cleaning pipeline and independently reconciled SQLite tables.
 
 ## Findings worth investigating
@@ -46,6 +47,6 @@ pointer; DAX recalculates under month, state and product filter context.
 5. Open Quality & Refresh: explain overlapping checks, excluded timing, snapshot
    identity and the distinction between rebuilding data and refreshing Desktop.
 
-See the user guide and skills walkthrough for maintenance and interview practice.
+See the user guide for the four-page report and the skills walkthrough for a practical explanation of the model.
 Source data and derived report data retain CC BY-NC-SA 4.0; reusable original
 code is MIT licensed. This historical example is for noncommercial demonstration.

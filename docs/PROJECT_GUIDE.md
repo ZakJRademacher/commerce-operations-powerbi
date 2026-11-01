@@ -2,7 +2,7 @@
 
 [Back to project overview](../README.md)
 
-Run commands from the repository root. Paths in command examples are relative to that root.
+The [two-page delivery report](../powerbi-rebuild/README.md) is the current featured report. The original four-page report remains available for a broader view. Run the commands below from the repository root.
 
 ## Reproduce and refresh
 
@@ -26,7 +26,7 @@ python src/pipeline.py
 python src/verify_snapshot.py
 ```
 
-Open `powerbi/Commerce.pbip` or the packaged PBIX. Set **DataRoot** in Power Query's
+Open `powerbi-rebuild/DeliveryPriorities.pbip` for the current report, or `powerbi/Commerce.pbip` for the earlier four-page version. Set **DataRoot** in Power Query's
 Edit parameters to the absolute path of `data/processed` on your machine. Choose
 Home > Refresh, then compare the imported snapshot with `latest.json`.
 
@@ -34,7 +34,7 @@ Automation is on demand: replacing the six source snapshots and rerunning Python
 rebuilds clean tables; Desktop Refresh recalculates the dashboard. It does not
 download new Kaggle data, run Python, or set up a cloud schedule by itself.
 
-## Why the numbers are defensible
+## Checks behind the figures
 
 - Orders and item lines have separate facts; payments aggregate before joining.
 - Every source order and item is retained. Duplicate keys and orphan links fail validation.
@@ -64,8 +64,8 @@ download new Kaggle data, run Python, or set up a cloud schedule by itself.
 
 Independent portfolio demonstration using [Olist's Brazilian E-Commerce Public
 Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), historical
-2016–2018 records. Not commissioned work for Olist or Albertsons. No costs,
-profit, inventory, verified savings or causal delivery explanation is available.
+2016–2018 records. The source supports delivery and merchandise analysis, but has no costs,
+profit, inventory, verified savings, or causal delivery explanation.
 Final purchase months are partial. Category filters reach item metrics only.
 The order-status chart counts each order's recorded status at dataset capture.
 Delivered and Shipped are separate current-status groups, not cumulative counts

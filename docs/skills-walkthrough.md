@@ -1,4 +1,6 @@
-# Supporting the portfolio in an interview or client call
+# Commerce model walkthrough
+
+The steps below use the original four-page report to explain the model. The current two-page delivery report has a shorter [operating guide](../powerbi-rebuild/README.md).
 
 ## Five-minute demonstration
 
@@ -35,7 +37,4 @@
 - Describe how you would adapt the pipeline for a client's real schema, data rights,
   update cadence and KPI definitions before quoting implementation work.
 
-If you cannot yet complete a task independently, rehearse it with the documentation
-before advertising that specific skill as production-ready. This project can
-demonstrate a small, well-scoped cleanup/reporting workflow without implying
-advanced statistical modeling or enterprise Power BI administration experience.
+Try the tasks in a copy, then keep your query, result, and explanation together. For unfamiliar exports, confirm the source format and reporting definitions before adapting the workflow.

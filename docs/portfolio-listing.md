@@ -1,13 +1,19 @@
 # Portfolio listing
 
-Title: Commerce Operations | Power BI Data Modeling & SQL
+Title: Commerce Delivery Review | Power BI
 
-Role: Data modeling and operations dashboard development
+Role: Data modeling, delivery analysis and Power BI reporting
 
-Description: Compare late-delivery workload with service rates in a four-page Power BI report over 99,441 historical orders. Python/SQLite prepares six related source files; separate order and item facts and aggregated payments prevent multiplied totals. The report shows 93.2% on-time delivery and exposes reconciliation exceptions. Includes the interactive PBIX, editable model, metric definitions and refresh guide. Independent project using Olist public data; historical findings, not current client outcomes.
+Description: I built a delivery review across 99,441 historical Olist orders to compare late-delivery workload with late rates. Python and SQLite prepare six related files without multiplying order or payment totals. The two-page Power BI report covers 6,534 late deliveries among 96,470 eligible orders. A SQL companion compares destination states within each purchase month. Includes the PBIX, editable source, definitions, and refresh guide. Independent project; the findings identify records to investigate, rather than causes.
 
 Skills: Microsoft Power BI; Python; SQL; Data Cleaning; Data Visualization.
 
 Repository: https://github.com/ZakJRademacher/commerce-operations-powerbi
 
-Previews: Existing native application screenshots and linked deliverables. See the repository overview for scope, source attribution and refresh instructions.
+## Media captions
+
+- Commerce delivery review: Power BI reports backed by Python and SQLite preparation.
+- Delivery priorities: compare late-order counts and rates using month and state filters.
+- Definitions page: eligible deliveries, excluded timing records, and how to read the comparisons.
+- Earlier four-page operations report: order counts, merchandise, on-time delivery, and delivery duration.
+- Static export of the earlier four-page operations report. The current two-page delivery review is downloadable on GitHub.

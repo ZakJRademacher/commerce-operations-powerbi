@@ -1,5 +1,7 @@
 # Dashboard handoff
 
+This guide covers the original four-page report. For the current two-page delivery review, use the [Delivery Priorities guide](../powerbi-rebuild/README.md).
+
 ## Open and explore
 
 Open `deliverables/Commerce Operations Dashboard.pbix` in Power BI Desktop. Its imported
@@ -106,5 +108,4 @@ reproducible local data-to-dashboard workflow, not a production hosted service.
 Be ready to explain fact-table grain, key validation, payment aggregation before
 joins, integer cents, missing-value denominators, one-direction relationships,
 filter context in DAX, and the difference between Refresh and rerunning Python.
-Use `docs/skills-walkthrough.md` for a practical rehearsal. Never claim this
-demonstration was paid client work or that it produced verified financial savings.
+Use `docs/skills-walkthrough.md` to trace those decisions through a practical example.
