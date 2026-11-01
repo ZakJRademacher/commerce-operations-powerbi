@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-01",
+  "method": "Independent CSV/datetime/Decimal/dictionary/Fraction calculations from original source files; project query/transform functions not imported.",
+  "results": {
+    "source_orders": 99441,
+    "source_items": 112650,
+    "all_state_month_cells_match": true,
+    "cells": 565,
+    "all_rankings_match_fraction_controls": true,
+    "july_2018": [
+      {
+        "purchase_month": "2018-07",
+        "state": "SP",
+        "orders": "2777",
+        "eligible_deliveries": "2712",
+        "late_deliveries": "100",
+        "item_lines": "3162",
+        "orders_without_items": "11",
+        "merchandise_cents": "32631919",
+        "item_merchandise_cents": "32631919",
+        "late_rate": "0.03687315634218289",
+        "workload_rank": "1",
+        "rate_rank": "6",
+        "rate_rank_note": "Included in rate ranking",
+        "coverage_note": "Interior source month; completeness not certified"
+      },
+      {
+        "purchase_month": "2018-07",
+        "state": "RJ",
+        "orders": "717",
+        "eligible_deliveries": "696",
+        "late_deliveries": "17",
+        "item_lines": "810",
+        "orders_without_items": "2",
+        "merchandise_cents": "9997364",
+        "item_merchandise_cents": "9997364",
+        "late_rate": "0.02442528735632184",
+        "workload_rank": "2",
+        "rate_rank": "7",
+        "rate_rank_note": "Included in rate ranking",
+        "coverage_note": "Interior source month; completeness not certified"
+      },
+      {
+        "purchase_month": "2018-07",
+        "state": "AL",
+        "orders": "23",
+        "eligible_deliveries": "22",
+        "late_deliveries": "4",
+        "item_lines": "23",
+        "orders_without_items": "0",
+        "merchandise_cents": "395623",
+        "item_merchandise_cents": "395623",
+        "late_rate": "0.18181818181818182",
+        "workload_rank": "9",
+        "rate_rank": "",
+        "rate_rank_note": "Below rate-ranking display threshold",
+        "coverage_note": "Interior source month; completeness not certified"
+      }
+    ],
+    "input_sha256": {
+      "olist_orders_dataset.csv": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+      "olist_order_items_dataset.csv": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+      "olist_customers_dataset.csv": "983a422239e1712ded753b3bf9ecf47dc73f144d306029dcfa99e70a226883d2"
+    }
+  },
+  "native_verification": "Existing native reports unchanged. New source/SQL checks do not establish native rendering or refresh; see the separate release note."
+}

@@ -1,31 +1,18 @@
 # Commerce Operations | Power BI
 
-![Current project presentation](deliverables/portfolio-cover-wide.png)
+**Where should delivery operations investigate, considering both workload and late rate?**
 
-[Motion cover preview](deliverables/portfolio-motion.webm) · [Presentation maintenance guide](docs/VISUAL_DESIGN.md)
+**6,534 of 96,470 eligible historical deliveries were late** (93.2% on time). SP and RJ contain **50.7%** of late deliveries, but their late rates differ: **4.5% versus 12.1%**. These are investigation leads, not explanations of cause or current service performance.
 
-The November 2026 working-dashboard redesign adds a shared navy, blue and orange layout with clearer navigation and larger analytical panels. Calculations, source policies and report contracts are preserved. Cover motion is separate from native desktop report behavior. [Visual-release verification](docs/DASHBOARD_RELEASE.md).
+A two-page Power BI report uses Python/SQLite preparation, separate order/item grains and exact monetary cents over six related Olist sources.
 
+[View current preview](deliverables/delivery-priorities-preview.png) · [Download current PBIX](deliverables/Commerce%20Delivery%20Priorities.pbix) · [SQL investigation and memo](docs/SQL_INVESTIGATION.md) · [Reproduce](#open-and-refresh)
 
-![Power BI](https://img.shields.io/badge/Power%20BI-C5A42C?style=flat-square) ![DAX](https://img.shields.io/badge/DAX-796A36?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-31566D?style=flat-square)
+![Current Power BI delivery priorities: counts and eligible rates](deliverables/delivery-priorities-preview.png)
 
-**Where should an operations team investigate late deliveries, and how does workload differ from service rate?**
+The report's selectors update its metrics; text marked **unfiltered snapshot** remains a historical reference. The [new state/month SQL companion](sql/delivery_priorities.sql) uses safe item aggregation and dense rankings, retaining small populations. In July 2018, SP has 100 late deliveries among 2,712 eligible; AL has four among 22 and is not rate-ranked. [Full results and control totals](deliverables/delivery-investigation) · [Independent practice](docs/INDEPENDENT_PRACTICE.md).
 
-A focused two-page **Power BI** delivery-prioritization report built from six related historical source files, with **Python/SQLite** validation and separate order/item facts. The original broader report is retained.
-
-**Current report:** [Delivery Priorities / Power BI](deliverables/Commerce%20Delivery%20Priorities.pbix) · [Open / refresh guide](powerbi-rebuild/README.md)
-
-![Power BI delivery-prioritization report](deliverables/delivery-priorities-preview.png)
-
-[Earlier four-page PDF](deliverables/Commerce%20Operations%20Dashboard.pdf) · [Earlier four-page PBIX](deliverables/Commerce%20Operations%20Dashboard.pbix) · [Read the case study](docs/case-study.md)
-
-## Findings
-
-- **6,534 of 96,470 eligible deliveries were late**; the on-time rate was **93.2%**.
-- São Paulo and Rio de Janeiro account for **50.7% of late deliveries**, but their late rates differ: **4.5% versus 12.1%**. Compare workload with rate before prioritizing an investigation.
-- **1,348 orders** have payment-versus-merchandise-and-freight differences. These remain visible for reconciliation rather than being forced into agreement.
-
-A useful next step is to investigate delivery segments in those states using both affected volume and rate. The snapshot cannot establish causes or current operating conditions.
+The [earlier four-page PDF](deliverables/Commerce%20Operations%20Dashboard.pdf), [earlier PBIX](deliverables/Commerce%20Operations%20Dashboard.pbix) and [original case study](docs/case-study.md) are preserved as broader historical references. The source also contains **1,348** payment-versus-merchandise/freight differences, retained for reconciliation.
 
 ## Inspect the model
 
@@ -41,9 +28,12 @@ Download and extract the repository ZIP, then open the PBIX; its sample is alrea
 ```powershell
 python src/prepare_demo.py
 python src/verify_snapshot.py
+python tools/investigate_delivery.py
 ```
 
-Set Power Query's **DataRoot** parameter to your local `data/processed` folder, then select **Home > Refresh**. [User guide and troubleshooting](docs/user-guide.md).
+Set Power Query's **DataRoot** parameter to your local `data/processed` folder, then select **Home > Refresh**. [Current two-page report guide](powerbi-rebuild/README.md). The [broader historical report guide](docs/user-guide.md) remains available.
+
+The analysis companion reads the published SQLite snapshot without changing it; no dbt or warehouse service is required. [Query walkthrough, findings and limits](docs/SQL_INVESTIGATION.md).
 
 ## Technical detail
 
@@ -59,3 +49,7 @@ Independent demonstration using Olist's historical 2016–2018 data. Final purch
 
 Refresh runs on demand; cloud scheduling is not configured. Original code is [MIT](LICENSE); source data and derived report data retain **CC BY-NC-SA 4.0**, including noncommercial and share-alike conditions. See the source guide before reusing data.
 
+
+## Presentation history
+
+[Cover preview](deliverables/portfolio-cover-wide.png) · [Motion cover](deliverables/portfolio-motion.webm) · [Design maintenance](docs/VISUAL_DESIGN.md) · [November 1 release record](docs/DASHBOARD_RELEASE.md). Covers are presentation assets; native report behavior is documented separately.

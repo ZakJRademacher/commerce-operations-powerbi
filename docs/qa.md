@@ -40,3 +40,13 @@ compile DAX or render Power BI. No Service deployment, gateway or unattended
 cloud refresh was tested. Exported PDF/images are static previews; the PBIX is
 the interactive deliverable. Source history is 2016–2018 and has partial final
 purchase months. Timing analysis is descriptive, not causal.
+
+## SQL companion — November 1, 2026
+
+The three new investigation tests and 15 existing pipeline tests pass (18 total). Independent raw-CSV/datetime/Decimal/Fraction calculations agree with all 565 state/month output rows, monetary sums, eligible/late flags and dense rankings. The 100-eligible display rule changes only rate-rank participation. [Exact controls](SQL_VERIFICATION.json) · [Walkthrough](SQL_INVESTIGATION.md). Current Power BI files are unchanged; these checks are not a new native DAX or refresh claim.
+
+### Current two-page report recheck
+
+On November 1, a disposable copy of `Commerce Delivery Priorities.pbix` rendered in Power BI Desktop. With both selectors at All: 96,470 eligible, 6,534 late, 6.8% late and eight delivered orders excluded from timing. Selecting AL changed cards and charts to 397 eligible, 85 late, 21.4% late and zero timing exclusions. Restoring All restored the baseline. Home > Refresh completed without a visible error and preserved that population. The explicitly unfiltered SP/RJ narrative remained fixed as labeled.
+
+The saved local DataRoot and existing public-sample inputs were used. This does not establish clean-machine path configuration, changed-source refresh, every slicer combination, or cloud behavior. No refreshed binary or report design was saved into this release.

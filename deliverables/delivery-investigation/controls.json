@@ -1,0 +1,25 @@
+{
+  "input_database_sha256": "5793281a275ecb330a33e9661b8ad29deebc9ce8da7cbce5e4f9b47b82afdf4b",
+  "sql_sha256": "99f92bb4f08cf16b066ee035cd7f326f39c60244aa1e6c5015e86888b9312dde",
+  "source_totals": {
+    "orders": 99441,
+    "eligible_deliveries": 96470,
+    "late_deliveries": 6534,
+    "item_lines": 112650,
+    "merchandise_cents": 1359164370,
+    "item_merchandise_cents": 1359164370
+  },
+  "result_totals": {
+    "orders": 99441,
+    "eligible_deliveries": 96470,
+    "late_deliveries": 6534,
+    "item_lines": 112650,
+    "merchandise_cents": 1359164370,
+    "item_merchandise_cents": 1359164370
+  },
+  "state_month_rows": 565,
+  "rate_ranking_min_eligible": 100,
+  "ranking_rule": "Within each purchase month; ties share a dense rank. The 100-eligible rule affects only rate_rank, not rows or rates; it is not a significance test.",
+  "grain": "One row per state and purchase month; items aggregated before the order join.",
+  "csv_sha256": "1bf91b34d107866b14fd18f7a4d6469453d1127a51e881feddd7d6f08bcd65df"
+}
