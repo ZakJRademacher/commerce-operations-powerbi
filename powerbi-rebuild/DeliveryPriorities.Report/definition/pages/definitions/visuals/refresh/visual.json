@@ -28,7 +28,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F6F5F0'"
+                      "Value": "'#0C121E'"
                     }
                   }
                 }
@@ -79,7 +79,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#203B43'"
+                      "Value": "'#EDF3FF'"
                     }
                   }
                 }
@@ -115,7 +115,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13pt",
-                      "color": "#61777D"
+                      "color": "#A4B5D0"
                     }
                   }
                 ]

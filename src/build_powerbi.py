@@ -178,7 +178,7 @@ def build_report():
         put(REPORT / f"definition/pages/{page}/page.json", {"$schema": BASE + "page/2.0.0/schema.json", "name": page, "displayName": display, "displayOption": "FitToPage", "height": 900, "width": 1280, "objects": {"background": [{"properties": {"color": color("#F2F5F8"), "transparency": literal(0)}}]}})
         text(page, "title", title, 24, 16, 1228, 55, 22, "#172E46")
         text(page, "instructions", subtitle, 24, 62, 1228, 35, 11)
-        text(page, "footer", "OLIST / Historical portfolio analysis • purchases 2016–2018 • CC BY-NC-SA 4.0 • Zak Rademacher", 24, 860, 1230, 35, 10)
+        text(page, "footer", "OLIST / Historical portfolio analysis â€¢ purchases 2016–2018 â€¢ CC BY-NC-SA 4.0 â€¢ Zak Rademacher", 24, 860, 1230, 35, 10)
         if page != "quality":
             slicer(page, "month", "Dates", "Month", 24, 390)
             slicer(page, "state", "States", "State", 430, 250)
@@ -203,11 +203,14 @@ def build_report():
         card("quality", "kpi" + str(x), "Refresh", metric, x)
     visual("quality", "checks", "tableEx", 24, 334, 760, 330, "Quality checks | order and item grains are labeled", {"Values": [("Quality", "Check"), ("Quality", "Flagged Rows", True)]}, sort=("Quality", "Flagged Rows", True, "Descending"))
     visual("quality", "snapshot", "tableEx", 808, 334, 444, 160, "Imported snapshot", {"Values": [("Refresh", "Snapshot"), ("Refresh", "Built UTC")]})
-    text("quality", "rules", "METRIC CONTRACT\n• Orders: one row per order.\n• Items: one row per order item.\n• Payments aggregate before joining.\n• Late = actual date > estimated date.\n• Missing dates are never imputed.\n• Category filters affect Items only.", 808, 512, 444, 190, 12)
+    text("quality", "rules", "METRIC CONTRACT\nâ€¢ Orders: one row per order.\nâ€¢ Items: one row per order item.\nâ€¢ Payments aggregate before joining.\nâ€¢ Late = actual date > estimated date.\nâ€¢ Missing dates are never imputed.\nâ€¢ Category filters affect Items only.", 808, 512, 444, 190, 12)
     text("quality", "limitations", "SOURCE & LIMITS\nOlist Brazilian E-Commerce Public Dataset via Kaggle. Historical 2016–2018 records, shared under CC BY-NC-SA 4.0. Merchandise is not profit. Payment differences are flagged, not forced to zero. No delivery cause, staffing benefit, or current backlog is inferred. Read the handoff guide for source attribution, refresh setup, definitions, and exception-level CSVs.", 24, 724, 1228, 126, 12)
 
 
 if __name__ == "__main__":
     build_model()
     build_report()
+    # Reapply the source-controlled presentation after generation.
+    import subprocess,sys
+    subprocess.run([sys.executable,str(Path(__file__).resolve().parents[1]/"tools"/"apply_visual_theme.py")],check=True)
     print(PBI / "Commerce.pbip")

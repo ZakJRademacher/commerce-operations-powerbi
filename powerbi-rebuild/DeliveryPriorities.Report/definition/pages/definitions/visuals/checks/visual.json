@@ -28,7 +28,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FFFFFF'"
+                      "Value": "'#152235'"
                     }
                   }
                 }
@@ -79,7 +79,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#203B43'"
+                      "Value": "'#EDF3FF'"
                     }
                   }
                 }
@@ -182,7 +182,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#203B43'"
+                      "Value": "'#EDF3FF'"
                     }
                   }
                 }
@@ -193,7 +193,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDF1ED'"
+                      "Value": "'#1C304A'"
                     }
                   }
                 }
@@ -217,7 +217,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#203B43'"
+                      "Value": "'#EDF3FF'"
                     }
                   }
                 }
@@ -228,7 +228,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FFFFFF'"
+                      "Value": "'#152235'"
                     }
                   }
                 }
@@ -238,6 +238,56 @@
               "expr": {
                 "Literal": {
                   "Value": "11D"
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EDF3FF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1C304A'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EDF3FF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#152235'"
+                    }
+                  }
                 }
               }
             }

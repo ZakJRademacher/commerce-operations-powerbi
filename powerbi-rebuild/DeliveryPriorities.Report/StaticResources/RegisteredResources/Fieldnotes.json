@@ -1,29 +1,29 @@
 {
-  "name": "Fieldnotes / Decision reports",
+  "name": "Dispatch",
   "dataColors": [
-    "#147D80",
-    "#BE5D50",
-    "#BA852D",
-    "#667C91",
-    "#9BAEAA"
+    "#5B9DFF",
+    "#FFAA69",
+    "#8294B2"
   ],
-  "background": "#FFFFFF",
-  "foreground": "#203B43",
-  "tableAccent": "#147D80",
+  "background": "#0C121E",
+  "foreground": "#EDF3FF",
+  "tableAccent": "#5B9DFF",
   "textClasses": {
     "title": {
-      "fontFace": "Segoe UI Semibold",
-      "fontSize": 13,
-      "color": "#203B43"
+      "fontFace": "Segoe UI",
+      "color": "#EDF3FF"
+    },
+    "header": {
+      "fontFace": "Segoe UI",
+      "color": "#EDF3FF"
     },
     "label": {
       "fontFace": "Segoe UI",
-      "fontSize": 11,
-      "color": "#61777D"
+      "color": "#A4B5D0"
     },
     "callout": {
       "fontFace": "Segoe UI",
-      "color": "#203B43"
+      "color": "#EDF3FF"
     }
   }
 }

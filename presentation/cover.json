@@ -1,0 +1,19 @@
+{
+  "title": "Commerce Operations",
+  "eyebrow": "DELIVERY OPERATIONS",
+  "description": "Find the next investigation. Keep the population in view.",
+  "format": "Power BI \u00b7 Python \u00b7 SQL",
+  "image": "deliverables/delivery-priorities-preview.png",
+  "tokens": "design-tokens.json",
+  "color_roles": {
+    "canvas": "canvas",
+    "surface": "surface",
+    "ink": "ink",
+    "muted": "muted",
+    "primary": "primary",
+    "accent": "accent"
+  },
+  "frame_label": "Delivery priorities",
+  "preview_note": "Historical Olist data \u00b7 counts and rates",
+  "footer": "POWER BI / SQL / RECONCILIATION"
+}

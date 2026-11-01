@@ -28,7 +28,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FFFFFF'"
+                      "Value": "'#152235'"
                     }
                   }
                 }
@@ -79,7 +79,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#203B43'"
+                      "Value": "'#EDF3FF'"
                     }
                   }
                 }
@@ -115,7 +115,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#203B43"
+                      "color": "#EDF3FF"
                     }
                   }
                 ]
@@ -127,7 +127,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#203B43"
+                      "color": "#EDF3FF"
                     }
                   }
                 ]
@@ -139,7 +139,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#203B43"
+                      "color": "#EDF3FF"
                     }
                   }
                 ]
@@ -151,7 +151,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#203B43"
+                      "color": "#EDF3FF"
                     }
                   }
                 ]
@@ -163,7 +163,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#203B43"
+                      "color": "#EDF3FF"
                     }
                   }
                 ]
@@ -175,7 +175,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#203B43"
+                      "color": "#EDF3FF"
                     }
                   }
                 ]
@@ -187,7 +187,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#203B43"
+                      "color": "#EDF3FF"
                     }
                   }
                 ]
@@ -199,7 +199,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#203B43"
+                      "color": "#EDF3FF"
                     }
                   }
                 ]

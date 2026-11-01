@@ -1,0 +1,48 @@
+{
+  "name": "Dispatch",
+  "font": "Segoe UI, Arial, sans-serif",
+  "colors": {
+    "canvas": "#0C121E",
+    "surface": "#152235",
+    "ink": "#EDF3FF",
+    "muted": "#A4B5D0",
+    "primary": "#5B9DFF",
+    "accent": "#FFAA69",
+    "line": "#31425B",
+    "soft": "#1C304A",
+    "prior": "#8294B2"
+  },
+  "native_aliases": {
+    "#203B43": "ink",
+    "#20323C": "ink",
+    "#172E46": "ink",
+    "#263C43": "ink",
+    "#61777D": "muted",
+    "#60757B": "muted",
+    "#647579": "muted",
+    "#566A7B": "muted",
+    "#444444": "muted",
+    "#147D80": "primary",
+    "#147D8C": "primary",
+    "#126F69": "primary",
+    "#127C80": "primary",
+    "#BE5D50": "accent",
+    "#B74732": "accent",
+    "#BA852D": "accent",
+    "#F6F5F0": "canvas",
+    "#F8F6F1": "canvas",
+    "#F2F5F8": "canvas",
+    "#FFFFFF": "surface",
+    "#EDF1ED": "soft",
+    "#E3E8E5": "line",
+    "#E5E9E7": "line",
+    "#CCD5D3": "prior",
+    "#8FA4A5": "prior"
+  },
+  "motion": {
+    "surface_ms": 580,
+    "stagger_ms": 70,
+    "easing": "cubic-bezier(.16,.8,.2,1)",
+    "respect_reduced_motion": true
+  }
+}
