@@ -34,8 +34,8 @@ items or payments. Currency remains integer cents through Python and SQLite.
 Source rows are retained; exceptions are exported and counted at their stated
 grains. Duplicate keys, orphan references and invalid amounts stop publication.
 
-An immutable snapshot contains typed CSVs, SQLite, hashes and reconciliation
-results. Only a successful build replaces `latest.json`. Power Query reads that
+A separate snapshot contains typed CSVs, SQLite, hashes and reconciliation
+results. Keep published files unchanged; their hashes detect edits, but the filesystem does not prevent them. Only a successful build replaces `latest.json`. Power Query reads that
 pointer; DAX recalculates under month, state and product filter context.
 
 ## A two-minute demonstration
