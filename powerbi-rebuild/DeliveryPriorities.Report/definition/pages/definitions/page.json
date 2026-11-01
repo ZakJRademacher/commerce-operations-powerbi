@@ -4,7 +4,7 @@
   "displayName": "02  Definitions & exceptions",
   "displayOption": "FitToPage",
   "height": 1000,
-  "width": 1440,
+  "width": 1600,
   "objects": {
     "background": [
       {
@@ -14,7 +14,7 @@
               "color": {
                 "expr": {
                   "Literal": {
-                    "Value": "'#0C121E'"
+                    "Value": "'#0B1423'"
                   }
                 }
               }

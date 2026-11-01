@@ -4,7 +4,7 @@
 
 [Motion cover preview](deliverables/portfolio-motion.webm) · [Presentation maintenance guide](docs/VISUAL_DESIGN.md)
 
-The October 2026 presentation refresh retains the existing calculations, source policies and report contracts. Cover animation is separate from native desktop report behavior.
+The November 2026 working-dashboard redesign adds a shared navy, blue and orange layout with clearer navigation and larger analytical panels. Calculations, source policies and report contracts are preserved. Cover motion is separate from native desktop report behavior. [Visual-release verification](docs/DASHBOARD_RELEASE.md).
 
 
 ![Power BI](https://img.shields.io/badge/Power%20BI-C5A42C?style=flat-square) ![DAX](https://img.shields.io/badge/DAX-796A36?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-31566D?style=flat-square)

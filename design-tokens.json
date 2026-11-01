@@ -1,16 +1,16 @@
 {
-  "name": "Dispatch",
+  "name": "Midnight / Blue / Orange",
   "font": "Segoe UI, Arial, sans-serif",
   "colors": {
-    "canvas": "#0C121E",
-    "surface": "#152235",
-    "ink": "#EDF3FF",
-    "muted": "#A4B5D0",
-    "primary": "#5B9DFF",
-    "accent": "#FFAA69",
-    "line": "#31425B",
-    "soft": "#1C304A",
-    "prior": "#8294B2"
+    "canvas": "#0B1423",
+    "surface": "#142339",
+    "ink": "#EAF0FC",
+    "muted": "#A2B2CC",
+    "primary": "#66A0FF",
+    "accent": "#FFAD72",
+    "line": "#263B57",
+    "soft": "#1A3252",
+    "prior": "#7891B6"
   },
   "native_aliases": {
     "#203B43": "ink",
@@ -37,12 +37,36 @@
     "#E3E8E5": "line",
     "#E5E9E7": "line",
     "#CCD5D3": "prior",
-    "#8FA4A5": "prior"
+    "#8FA4A5": "prior",
+    "#0C121E": "canvas",
+    "#152235": "surface",
+    "#EDF3FF": "ink",
+    "#A4B5D0": "muted",
+    "#5B9DFF": "primary",
+    "#FFAA69": "accent",
+    "#31425B": "line",
+    "#1C304A": "soft",
+    "#8294B2": "prior",
+    "#0B1423": "canvas",
+    "#142339": "surface",
+    "#EAF0FC": "ink",
+    "#A2B2CC": "muted",
+    "#66A0FF": "primary",
+    "#FFAD72": "accent",
+    "#263B57": "line",
+    "#1A3252": "soft",
+    "#7891B6": "prior"
   },
   "motion": {
     "surface_ms": 580,
     "stagger_ms": 70,
     "easing": "cubic-bezier(.16,.8,.2,1)",
     "respect_reduced_motion": true
+  },
+  "report_layout": {
+    "width": 1600,
+    "height": 1000,
+    "rail_width": 216,
+    "version": "2026-10-31"
   }
 }

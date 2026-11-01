@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "snapshot",
   "position": {
-    "x": 808,
-    "y": 334,
-    "width": 444,
-    "height": 160,
-    "z": 0,
+    "x": 1066,
+    "y": 378,
+    "width": 502,
+    "height": 142,
+    "z": 10,
     "tabOrder": 4148
   },
   "visual": {
@@ -64,7 +64,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#152235'"
+                      "Value": "'#142339'"
                     }
                   }
                 }
@@ -86,7 +86,32 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#263B57'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
@@ -115,7 +140,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDF3FF'"
+                      "Value": "'#EAF0FC'"
                     }
                   }
                 }
@@ -124,7 +149,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },
@@ -138,7 +163,48 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
                 }
               }
             }
@@ -155,7 +221,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDF3FF'"
+                      "Value": "'#EAF0FC'"
                     }
                   }
                 }
@@ -166,7 +232,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1C304A'"
+                      "Value": "'#1B2C45'"
                     }
                   }
                 }
@@ -177,7 +243,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDF3FF'"
+                      "Value": "'#EAF0FC'"
                     }
                   }
                 }
@@ -188,9 +254,16 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#152235'"
+                      "Value": "'#142339'"
                     }
                   }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -205,7 +278,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDF3FF'"
+                      "Value": "'#EAF0FC'"
                     }
                   }
                 }
@@ -216,7 +289,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#152235'"
+                      "Value": "'#142339'"
                     }
                   }
                 }
@@ -233,7 +306,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDF3FF'"
+                      "Value": "'#A2B2CC'"
                     }
                   }
                 }
@@ -244,9 +317,16 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1C304A'"
+                      "Value": "'#142339'"
                     }
                   }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }

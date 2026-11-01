@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "interpretation",
   "position": {
-    "x": 24,
-    "y": 821,
-    "width": 1392,
-    "height": 66,
-    "z": 0,
+    "x": 252,
+    "y": 834,
+    "width": 1316,
+    "height": 64,
+    "z": 10,
     "tabOrder": 8234
   },
   "visual": {
@@ -19,7 +19,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -28,7 +28,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#0C121E'"
+                      "Value": "'#142339'"
                     }
                   }
                 }
@@ -51,6 +51,31 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#263B57'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
@@ -79,7 +104,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDF3FF'"
+                      "Value": "'#EAF0FC'"
                     }
                   }
                 }
@@ -88,7 +113,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },
@@ -96,6 +121,47 @@
               "expr": {
                 "Literal": {
                   "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -114,8 +180,8 @@
                     "value": "High counts identify workload; high rates identify service concerns. Use both, then inspect timing exclusions and order mix before assigning a cause. The N ≥ 100 display rule reduces tiny-group noise; it does not establish statistical certainty.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13pt",
-                      "color": "#EDF3FF"
+                      "fontSize": "12pt",
+                      "color": "#EAF0FC"
                     }
                   }
                 ]

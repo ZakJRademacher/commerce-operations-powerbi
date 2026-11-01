@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "rules",
   "position": {
-    "x": 808,
-    "y": 512,
-    "width": 444,
-    "height": 190,
-    "z": 0,
+    "x": 1066,
+    "y": 544,
+    "width": 502,
+    "height": 260,
+    "z": 10,
     "tabOrder": 5928
   },
   "visual": {
@@ -28,7 +28,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#152235'"
+                      "Value": "'#142339'"
                     }
                   }
                 }
@@ -51,6 +51,31 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#263B57'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
@@ -79,7 +104,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDF3FF'"
+                      "Value": "'#EAF0FC'"
                     }
                   }
                 }
@@ -88,7 +113,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },
@@ -102,7 +127,48 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -121,8 +187,8 @@
                     "value": "METRIC CONTRACT\n• Orders: one row per order.\n• Items: one row per order item.\n• Payments aggregate before joining.\n• Late = actual date > estimated date.\n• Missing dates are never imputed.\n• Category filters affect Items only.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "12pt",
-                      "color": "#A4B5D0"
+                      "fontSize": "13pt",
+                      "color": "#EAF0FC"
                     }
                   }
                 ]

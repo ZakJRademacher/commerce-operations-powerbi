@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "method",
   "position": {
-    "x": 728,
-    "y": 200,
-    "width": 688,
-    "height": 480,
-    "z": 0,
+    "x": 902,
+    "y": 206,
+    "width": 666,
+    "height": 504,
+    "z": 10,
     "tabOrder": 2728
   },
   "visual": {
@@ -28,7 +28,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#152235'"
+                      "Value": "'#142339'"
                     }
                   }
                 }
@@ -51,6 +51,31 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#263B57'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
@@ -79,7 +104,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#EDF3FF'"
+                      "Value": "'#EAF0FC'"
                     }
                   }
                 }
@@ -88,7 +113,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12D"
                 }
               }
             },
@@ -96,6 +121,47 @@
               "expr": {
                 "Literal": {
                   "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -115,7 +181,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#EDF3FF"
+                      "color": "#EAF0FC"
                     }
                   }
                 ]
@@ -127,7 +193,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#EDF3FF"
+                      "color": "#EAF0FC"
                     }
                   }
                 ]
@@ -139,7 +205,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#EDF3FF"
+                      "color": "#EAF0FC"
                     }
                   }
                 ]
@@ -151,7 +217,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#EDF3FF"
+                      "color": "#EAF0FC"
                     }
                   }
                 ]
@@ -163,7 +229,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#EDF3FF"
+                      "color": "#EAF0FC"
                     }
                   }
                 ]
@@ -175,7 +241,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#EDF3FF"
+                      "color": "#EAF0FC"
                     }
                   }
                 ]
@@ -187,7 +253,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#EDF3FF"
+                      "color": "#EAF0FC"
                     }
                   }
                 ]
@@ -199,7 +265,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
-                      "color": "#EDF3FF"
+                      "color": "#EAF0FC"
                     }
                   }
                 ]

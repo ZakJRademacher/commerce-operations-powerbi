@@ -3,8 +3,8 @@
   "name": "overview",
   "displayName": "01  Overview",
   "displayOption": "FitToPage",
-  "height": 900,
-  "width": 1280,
+  "height": 1000,
+  "width": 1600,
   "objects": {
     "background": [
       {
@@ -14,7 +14,7 @@
               "color": {
                 "expr": {
                   "Literal": {
-                    "Value": "'#0C121E'"
+                    "Value": "'#0B1423'"
                   }
                 }
               }

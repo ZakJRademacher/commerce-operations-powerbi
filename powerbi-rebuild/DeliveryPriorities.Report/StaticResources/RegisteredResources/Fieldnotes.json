@@ -1,29 +1,29 @@
 {
-  "name": "Dispatch",
+  "name": "Midnight / Blue / Orange",
   "dataColors": [
-    "#5B9DFF",
-    "#FFAA69",
-    "#8294B2"
+    "#66A0FF",
+    "#FFAD72",
+    "#7891B6"
   ],
-  "background": "#0C121E",
-  "foreground": "#EDF3FF",
-  "tableAccent": "#5B9DFF",
+  "background": "#0B1423",
+  "foreground": "#EAF0FC",
+  "tableAccent": "#66A0FF",
   "textClasses": {
     "title": {
       "fontFace": "Segoe UI",
-      "color": "#EDF3FF"
+      "color": "#EAF0FC"
     },
     "header": {
       "fontFace": "Segoe UI",
-      "color": "#EDF3FF"
+      "color": "#EAF0FC"
     },
     "label": {
       "fontFace": "Segoe UI",
-      "color": "#A4B5D0"
+      "color": "#A2B2CC"
     },
     "callout": {
       "fontFace": "Segoe UI",
-      "color": "#EDF3FF"
+      "color": "#EAF0FC"
     }
   }
 }
