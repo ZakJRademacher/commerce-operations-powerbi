@@ -46,7 +46,7 @@ The SQL companion reads the existing SQLite snapshot. It doesn't require dbt or 
 - [Source and license](docs/source-and-license.md) · [Pipeline](src/pipeline.py) · [Tests](tests)
 - [Case study](docs/case-study.md) · [Visual maintenance](docs/VISUAL_DESIGN.md)
 
-This independent project uses Olist's historical 2016–2018 data. Final purchase months are partial, and order statuses describe the recorded snapshot rather than a full history of status changes. The local dbt extension is outside this published workflow.
+This independent project uses Olist's historical 2016–2018 data. Final purchase months are partial, and order statuses describe the recorded snapshot rather than a full history of status changes.
 
 The earlier four-page [Power BI report](https://github.com/ZakJRademacher/commerce-operations-powerbi/blob/11d10fcb46b2e7d094acaac4c4802f5cc9450c5e/deliverables/Commerce%20Operations%20Dashboard.pbix) and [editable source](https://github.com/ZakJRademacher/commerce-operations-powerbi/tree/11d10fcb46b2e7d094acaac4c4802f5cc9450c5e/powerbi) remain in repository history. The two-page report above is the current download.
 
