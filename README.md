@@ -24,7 +24,7 @@ Orders and item lines stay in separate fact tables. Payments are summed to one r
 
 The source also has **1,348 payment-versus-merchandise/freight differences**. I kept these visible instead of forcing the figures to agree. Merchandise excludes freight and isn't a measure of profit or recognized revenue.
 
-[Model and table definitions](docs/data-dictionary.md) · [DAX](powerbi/measures.dax) · [SQL review queries](sql/operations_review.sql)
+[Model and table definitions](docs/data-dictionary.md) · [Current report source](powerbi-rebuild/DeliveryPriorities.pbip) · [SQL review queries](sql/operations_review.sql)
 
 ## Open and refresh
 
@@ -40,14 +40,14 @@ Set Power Query's **DataRoot** parameter to your absolute `data/processed` folde
 
 The SQL companion reads the existing SQLite snapshot. It doesn't require dbt or a hosted warehouse. Source rebuilding and Desktop refresh are separate, on-demand steps.
 
-## Documentation and earlier reports
+## Methods and verification
 
 - [Operating guide](docs/PROJECT_GUIDE.md) · [Validation](docs/qa.md) · [Reconciliation](docs/reconciliation.json)
 - [Source and license](docs/source-and-license.md) · [Pipeline](src/pipeline.py) · [Tests](tests)
-- [Earlier four-page report](deliverables/Commerce%20Operations%20Dashboard.pbix) · [PDF](deliverables/Commerce%20Operations%20Dashboard.pdf) · [Editable source](powerbi/Commerce.pbip)
-- [Case study](docs/case-study.md) · [Earlier report guide](docs/user-guide.md) · [Practice exercise](docs/INDEPENDENT_PRACTICE.md)
-- [Cover](deliverables/portfolio-cover-wide.png) · [Motion preview](deliverables/portfolio-motion.webm) · [Visual maintenance](docs/VISUAL_DESIGN.md) · [Presentation history](docs/DASHBOARD_RELEASE.md)
+- [Case study](docs/case-study.md) · [Visual maintenance](docs/VISUAL_DESIGN.md)
 
 This independent project uses Olist's historical 2016–2018 data. Final purchase months are partial, and order statuses describe the recorded snapshot rather than a full history of status changes. The local dbt extension is outside this published workflow.
+
+The earlier four-page [Power BI report](https://github.com/ZakJRademacher/commerce-operations-powerbi/blob/11d10fcb46b2e7d094acaac4c4802f5cc9450c5e/deliverables/Commerce%20Operations%20Dashboard.pbix) and [editable source](https://github.com/ZakJRademacher/commerce-operations-powerbi/tree/11d10fcb46b2e7d094acaac4c4802f5cc9450c5e/powerbi) remain in repository history. The two-page report above is the current download.
 
 Original code: [MIT](LICENSE). Source data and derived report data retain **CC BY-NC-SA 4.0**, including its noncommercial and share-alike conditions.

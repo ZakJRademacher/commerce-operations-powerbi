@@ -14,12 +14,10 @@ Page 2 documents populations, exclusions and limitations. Its evidence represent
 
 Keep this complete folder together. On a new machine, set DataRoot through Transform data > Edit parameters to the absolute path of the prepared input folder described below. Choose Home > Refresh. Read [data instructions](data/README.md) before replacing any input. Refresh the PBIP first, check both pages and filters, then save a new PBIX into deliverables; saving the source does not automatically update the exported PBIX.
 
-The report uses a historical snapshot. Check the period and exclusions when interpreting it; it is not a live backlog. The original workbook and reporting files remain available.
+The report uses a historical snapshot. Check the period and exclusions when interpreting it; it is not a live backlog.
 
-## Your practice task
+## Checked filter example
 
-Select Alabama. Confirm 397 eligible deliveries, 85 late deliveries and 21.4% late rate. Explain why SP leads by workload while AL leads by rate. Restore All.
-
-Acceptance: explain the denominator, identify an excluded population, and describe the additional data needed for a follow-up. Change the chart sort in a practice copy, then confirm the totals still agree. Read the DAX measure for one headline metric and explain it in plain language.
+With Alabama selected, the report shows 397 eligible deliveries, 85 late deliveries and a 21.4% late rate. Restore All to return to the full snapshot. SP has the larger late-delivery workload; the two states have different populations.
 
 Native Power BI Desktop refresh, both report pages and the filter example above were checked on October 29, 2026. See verification.json and the report previews for evidence.

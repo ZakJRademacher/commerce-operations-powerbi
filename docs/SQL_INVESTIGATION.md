@@ -40,4 +40,4 @@ The 565 cells sum back to 99,441 orders, 112,650 item lines, 96,470 eligible del
 
 These rankings describe the historical snapshot. They help choose records to review, but do not assign fault or estimate what an intervention would achieve. Purchase month differs from delivery month. States can differ in order mix and routes. No carrier-level intervention, cost saving, profit or universal statistical confidence is established. The existing Power BI report retains its current calculations and layout; these CSVs are an analysis companion. The separate local SQL/dbt extension is outside this published workflow.
 
-Work through [the independent practice task](INDEPENDENT_PRACTICE.md) separately from this explanation. Source data and derived outputs retain [Olist's CC BY-NC-SA 4.0 terms](source-and-license.md); original code remains MIT.
+Source data and derived outputs retain [Olist's CC BY-NC-SA 4.0 terms](source-and-license.md); original code remains MIT.

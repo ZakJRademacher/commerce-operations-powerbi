@@ -47,6 +47,6 @@ pointer; DAX recalculates under month, state and product filter context.
 5. Open Quality & Refresh: explain overlapping checks, excluded timing, snapshot
    identity and the distinction between rebuilding data and refreshing Desktop.
 
-See the user guide for the four-page report and the skills walkthrough for a practical explanation of the model.
+For current report controls and refresh instructions, see the [two-page report guide](../powerbi-rebuild/README.md). The [model guide](data-dictionary.md) explains table grains and measures.
 Source data and derived report data retain CC BY-NC-SA 4.0; reusable original
 code is MIT licensed. This historical example is for noncommercial demonstration.

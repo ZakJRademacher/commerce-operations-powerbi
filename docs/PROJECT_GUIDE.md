@@ -2,7 +2,7 @@
 
 [Back to project overview](../README.md)
 
-The [two-page delivery report](../powerbi-rebuild/README.md) is the current featured report. The original four-page report remains available for a broader view. Run the commands below from the repository root.
+The [two-page delivery report](../powerbi-rebuild/README.md) is the current report. Run the commands below from the repository root.
 
 ## Reproduce and refresh
 
@@ -26,7 +26,7 @@ python src/pipeline.py
 python src/verify_snapshot.py
 ```
 
-Open `powerbi-rebuild/DeliveryPriorities.pbip` for the current report, or `powerbi/Commerce.pbip` for the earlier four-page version. Set **DataRoot** in Power Query's
+Open `powerbi-rebuild/DeliveryPriorities.pbip`. Set **DataRoot** in Power Query's
 Edit parameters to the absolute path of `data/processed` on your machine. Choose
 Home > Refresh, then compare the imported snapshot with `latest.json`.
 
@@ -49,16 +49,14 @@ download new Kaggle data, run Python, or set up a cloud schedule by itself.
 
 | Document | Purpose |
 |---|---|
-| [User guide](../docs/user-guide.md) | Open, filter, move, refresh and troubleshoot |
+| [Current report guide](../powerbi-rebuild/README.md) | Open, filter, refresh and troubleshoot |
 | [Cleaning rules](../docs/cleaning-rules.md) | Transformation decisions and metric definitions |
 | [Data dictionary/model](../docs/data-dictionary.md) | Table grains, fields and relationships |
 | [Source and license](../docs/source-and-license.md) | Kaggle attribution, hashes and data rights |
-| [Skills walkthrough](../docs/skills-walkthrough.md) | Explain and maintain this portfolio example |
 | [Case study](../docs/case-study.md) | Business findings and a two-minute demonstration |
 | [Validation record](../docs/qa.md) | Automated checks, native interaction checks and limits |
 | [SQL review queries](../sql/operations_review.sql) | Reproduce operational summaries in SQLite |
-| [DAX measures](../powerbi/measures.dax) | Explicit metric formulas and descriptions |
-| [Power Query](../powerbi/power-query.m) | Refresh source and explicit data types |
+| [Current editable model](../powerbi-rebuild/DeliveryPriorities.pbip) | Report calculations, queries and layout |
 
 ## Scope and licensing
 

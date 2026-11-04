@@ -46,5 +46,6 @@ and Refresh are disconnected, full-snapshot diagnostic tables.
 | Exceptions.csv | Text | Order ID, rule and human-readable detail; not imported into Power BI |
 
 Raw numeric fact columns are hidden in Power BI so readers use documented explicit
-measures. Measure formulas and descriptions are in `powerbi/measures.dax` and the
-semantic model. CSVs use UTF-8, ISO dates, headers and blank nullable values.
+measures. Current formulas and descriptions are in the
+`powerbi-rebuild/DeliveryPriorities.SemanticModel` source. CSVs use UTF-8, ISO
+dates, headers and blank nullable values.
